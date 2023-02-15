@@ -67,5 +67,35 @@ export class DataForm{
             }
     
     }
+    addFormHandler(handlerFun) {
+        this.#formElement.addEventListener('submit', (event) => {
+        event.preventDefault(); //canceling default handler of "submit"
+        const dataForm = {};
+        dataForm.dateFrom = this.#dateFromElement.value;
+        dataForm.dateTo = this.#dateToElement.value;
+        dataForm.hourFrom = this.#hourFromElement.value;
+        dataForm.hourTo = this.#hourToElement.value;
+        dataForm.city = this.#citySelectorElement.value;
+        try{
+            checkForm(dataForm);
+            this.#formElement.reset();
+            handlerFun(dataForm);
+          } catch(e){
+            alert(e);
+          }
+    }); 
+    }
     
+}
+function checkForm(dataForm){
+    let errMessage;
+    if (dataForm.dateFrom > dataForm.dateTo){
+        errMessage = "Final date must be after or equal start's date to!\n";
+    }
+    if (dataForm.hourFrom > dataForm.hourTo){
+        errMessage += "Start time must be earlier or equal end time to!\n";
+    }
+    if (errMessage){
+        throw(errMessage);
+    }
 }

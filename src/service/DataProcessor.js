@@ -30,3 +30,16 @@ function getObjectFromResponse(obj, hourFrom, hourTo){
     return temperturePerHourPerDate;
     }
    
+    // function processRawData(rawData, hourFrom, hourTo) {
+    
+    //     const timeArray = getHoursElements(rawData.hourly.time, hourFrom, hourTo);
+    //     const temperatureArray =getHoursElements(rawData.hourly.temperature_2m, hourFrom, hourTo); ;
+    //     return timeArray.map((t, index) => {
+    //         const res = {};
+    //         const dateTime = t.split("T");
+    //         res.date = dateTime[0];
+    //         res.hour = dateTime[1];
+    //         res.temperature = temperatureArray[index];
+    //         return res;
+    
+    //     })

@@ -17,3 +17,7 @@ const cities = weatherConfig.cities;
 // }
 // displayTemperatures();
 const dataForm = new DataForm("form-section", 16, cities);
+dataForm.addFormHandler(startFunction);
+function startFunction(){
+    console.log('end');
+}
