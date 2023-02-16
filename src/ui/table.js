@@ -11,12 +11,13 @@ export class Table {
         }
        parentElement.innerHTML = ` <h3 class="table-logo">${tableName} </h3>
         <table >
+            <tbody id="${tableName}">
             <thead>
                 <tr>
                     ${getHeader(schema)}                    
                 </tr>
             </thead>
-            <tbody id="${tableName}">
+            
                
             </tbody>
         </table>`

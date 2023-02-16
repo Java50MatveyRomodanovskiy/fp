@@ -79,6 +79,11 @@ export class DataForm{
         try{
             checkForm(dataForm);
             this.#formElement.reset();
+            this.#dateFromElement.value = undefined;
+            this.#dateToElement.value = undefined;
+            this.#hourFromElement.value = undefined;
+            this.#hourToElement.value = undefined;
+            this.#citySelectorElement.value = undefined;
             handlerFun(dataForm);
           } catch(e){
             alert(e);

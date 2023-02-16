@@ -14,7 +14,7 @@ async function displayTemperatures(dataForm) {
     const {dateFrom} = dataForm;
     const {hourFrom} = dataForm;
     const {hourTo} = dataForm;
-    const data = await dataProcessor.getTemperatureData(city, dateTo , dateFrom, hourFrom, hourTo);
+    const data = await dataProcessor.getTemperatureData(city, dateFrom, dateTo, hourFrom, hourTo);
     data.forEach(e => tableForecast.addRow(e));
 }
 const schema = [
